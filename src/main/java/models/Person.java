@@ -1,10 +1,11 @@
 package models;
 
 public class Person {
-    String fName = "Mark";
-    String lName = "Tven";
+    String fName = "Ma:rk";
+    String lName = "Tv:e:n";
+    String fullName = fName + " " + lName;
     String email = "markT35@gmail.com";
-    String address = "USA";
+    String address = "U:S:A";
 
     public Person withFName(String fName) {
         this.fName = fName;
@@ -41,4 +42,6 @@ public class Person {
     public String getAddress() {
         return address;
     }
+
+    public String getFullName() { return fullName; }
 }

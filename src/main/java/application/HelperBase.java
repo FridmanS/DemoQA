@@ -1,9 +1,13 @@
 package application;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class HelperBase {
 
@@ -41,5 +45,18 @@ public class HelperBase {
 
     public void waitForElementPresent(long timeout, By locator){
         new WebDriverWait(wd, timeout).until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
+
+    public void closeBunner() {
+
+        click(By.cssSelector("#close-fixedban"));
+    }
+
+    public void toPlaceTheObjectInTheMiddle(By locator) {
+        wd.findElement(locator).sendKeys(Keys.ARROW_DOWN);
+    }
+
+    public List<WebElement> getElements(By locator) {
+        return wd.findElements(locator);
     }
 }

@@ -8,11 +8,11 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
 
     WebDriver wd;
-    Helper helper;
+    HelperTextBox helper;
 
     public void init(){
         wd = new ChromeDriver();
-        helper = new Helper(wd);
+        helper = new HelperTextBox(wd);
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.navigate().to("https://demoqa.com/");
@@ -22,7 +22,7 @@ public class ApplicationManager {
         wd.quit();
     }
 
-    public Helper helper(){
+    public HelperTextBox helper(){
         return helper;
     }
 
